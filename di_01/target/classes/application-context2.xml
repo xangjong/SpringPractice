@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 빈 이름 : 일반적으로 클래스 이름에서 첫문자만 소문자로하고 나머지는 그대로 사용 -->
+	<bean id="speaker" class="com.di.spring_di_xml_constructor_ex1.Speaker" />
+	<bean id="tv" class="com.di.spring_di_xml_constructor_ex1.TV">
+		<!-- 생성자 기반 : Speaker 참조 (Speaker 빈을 의존성 주입하도록 설정) -->
+		<constructor-arg ref="speaker" />
+	</bean>
+</beans>
